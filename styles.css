@@ -10,13 +10,17 @@ body {
   background-color: #f4f4f4;
   padding: 10px;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
 
 header {
   background: #004080;
   color: white;
   padding: 15px;
   text-align: center;
+  width: 100vw;
 }
 
 nav ul {
@@ -42,6 +46,9 @@ nav ul li:hover .dropdown {
   display: block;
 }
 
+.banner {
+  width: 100%;
+}
 .dropdown {
   display: none;
   position: absolute;
@@ -261,6 +268,7 @@ contact-hero {
   align-items: flex-start;
   max-width: 1200px;
   margin: auto;
+  gap: 20px;
 }
 
 .message-text {
@@ -286,9 +294,8 @@ contact-hero {
 }
 
 .message-image {
-  max-width: 400px;
+  max-width: 60rem;
   flex: 1;
-  background-color: #f05c5c;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -300,7 +307,83 @@ contact-hero {
   border-radius: 4px;
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
 
+/* +2.html style */
+.course-details {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.course-details .container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 25px;
+  border-left: 5px solid #2a71d0;
+  padding-left: 15px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.course-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.info-box {
+  flex: 1;
+  min-width: 250px;
+  background-color: #ffffff;
+  border-left: 4px solid #2a71d0;
+  padding: 20px 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.info-box h3 {
+  font-size: 20px;
+  color: #2a71d0;
+  margin-bottom: 10px;
+}
+
+.syllabus-link {
+  display: inline-block;
+  font-size: 16px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 5px;
+  transition: color 0.3s;
+}
+
+.syllabus-link span {
+  font-size: 16px;
+}
+
+.syllabus-link:hover {
+  color: #004799;
+}
+
+
+/* Responsive Design */
 
 @media (max-width: 600px) {
   .contact-hero {
@@ -310,4 +393,99 @@ contact-hero {
   .contact-grid {
     gap: 20px;
   }
+}
+
+/* About Hero Section */
+.about-hero {
+  background-image: url("https://images.shiksha.com/mediadata/images/1537269572phpJbvvgh_g.jpg"); /* Replace with your own image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.about-hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.about-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+/* Fee Structure Section */
+.fee_structure-hero {
+  background-color: #1a3dde;
+  color: white;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.fee_structure-hero h1{
+  font-size: 3rem;
+  padding-left: 4rem;
+}
+
+.structure_container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+td {
+  background-color: #fff;
+} 
+tfoot {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+tfoot td {
+  text-align: right;
 }
