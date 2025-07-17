@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #004080;
+  --accent-color: #e74c3c;
+  --link-color: #0066cc;
+  --light-bg: #f4f4f4;
+  --dark-overlay: rgba(0, 0, 0, 0.5);
+  --white-overlay: rgba(255, 255, 255, 0.8);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +17,27 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: var(--light-bg);
   padding: 10px;
   height: 100%;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
+img, main, section {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
 header {
-  background: #004080;
+  background: var(--primary-color);
   color: white;
   padding: 15px;
   text-align: center;
@@ -46,15 +67,16 @@ nav ul li:hover .dropdown {
   display: block;
 }
 
-.banner {
-  width: 100%;
+nav ul li:hover a {
+  background-color: #005bb5;
 }
+
 .dropdown {
   display: none;
   position: absolute;
   top: 30px;
   left: 0;
-  background-color: #0066cc;
+  background-color: var(--link-color);
   padding: 10px;
   z-index: 100;
   flex-direction: row;
@@ -64,6 +86,10 @@ nav ul li:hover .dropdown {
 .dropdown li {
   margin: 5px 0;
   display: inline;
+}
+
+.dropdown a:hover {
+  background-color: #005bb5;
 }
 
 main {
@@ -85,11 +111,16 @@ form textarea {
 }
 
 button {
-  background: #0066cc;
+  background: var(--link-color);
   color: white;
   padding: 10px 15px;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #004799;
 }
 
 footer {
@@ -102,22 +133,13 @@ footer {
   gap: 20px;
 }
 
-
 footer a {
   text-decoration: none;
 }
 
-.dropdown a:hover {
-  background-color: #005bb5;
-}
-
-.nav li {
-    width: 50px;
-}
-
 /* Hero Section */
 .hero {
-  background-image: url("https://images.shiksha.com/mediadata/images/1537269572phpJbvvgh_g.jpg"); /* Replace with your own image path */
+  background-image: url("https://images.shiksha.com/mediadata/images/1537269572phpJbvvgh_g.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -133,11 +155,8 @@ footer a {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  inset: 0;
+  background-color: var(--dark-overlay);
 }
 
 .hero-content {
@@ -172,7 +191,7 @@ footer a {
 }
 
 .btn.red {
-  background-color: #e74c3c;
+  background-color: var(--accent-color);
   color: white;
 }
 
@@ -189,9 +208,8 @@ footer a {
   background-color: #ddd;
 }
 
-
-/* contact us style */
-contact-hero {
+/* Contact Hero Section */
+.contact-hero {
   background-color: #1a3dde;
   color: white;
   text-align: center;
@@ -200,6 +218,7 @@ contact-hero {
   font-weight: bold;
 }
 
+/* Wave Separator */
 .wave-separator svg {
   display: block;
   width: 100%;
@@ -207,6 +226,7 @@ contact-hero {
   margin-bottom: -5px;
 }
 
+/* Contact Section */
 .contact-section {
   padding: 40px 20px;
 }
@@ -240,15 +260,16 @@ contact-hero {
 }
 
 .bi {
-  color: #e74c3c;
+  color: var(--accent-color);
   margin-right: 8px;
 }
 
 .highlight {
-  color: #e74c3c;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
+/* Logo */
 .logo {
   width: 100px;
   height: auto;
@@ -256,6 +277,7 @@ contact-hero {
   background-color: #fff;
 }
 
+/* Principal Message */
 .principal-message {
   background-color: #fff;
   padding: 40px 20px;
@@ -313,7 +335,7 @@ h2 {
   color: #333;
 }
 
-/* +2.html style */
+/* Course Details Section (+2.html) */
 .course-details {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -354,7 +376,7 @@ h2 {
   background-color: #ffffff;
   border-left: 4px solid #2a71d0;
   padding: 20px 25px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 }
 
@@ -367,7 +389,7 @@ h2 {
 .syllabus-link {
   display: inline-block;
   font-size: 16px;
-  color: #0066cc;
+  color: var(--link-color);
   text-decoration: none;
   font-weight: 500;
   margin-top: 5px;
@@ -382,22 +404,60 @@ h2 {
   color: #004799;
 }
 
+/* Fee Structure Section */
+.fee_structure-hero {
+  background-color: #1a3dde;
+  color: white;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+}
 
-/* Responsive Design */
+.fee_structure-hero h1 {
+  font-size: 3rem;
+}
 
-@media (max-width: 600px) {
-  .contact-hero {
-    font-size: 1.5rem;
-  }
+.structure_container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
 
-  .contact-grid {
-    gap: 20px;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+}
+
+tfoot {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+tfoot td {
+  text-align: right;
 }
 
 /* About Hero Section */
 .about-hero {
-  background-image: url("https://images.shiksha.com/mediadata/images/1537269572phpJbvvgh_g.jpg"); /* Replace with your own image path */
+  background-image: url("https://images.shiksha.com/mediadata/images/1537269572phpJbvvgh_g.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -413,11 +473,8 @@ h2 {
 .about-hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  inset: 0;
+  background-color: var(--dark-overlay);
 }
 
 .about-hero-content {
@@ -441,51 +498,440 @@ h2 {
   display: inline-block;
 }
 
+/* Our Team section  */
 
-/* Fee Structure Section */
-.fee_structure-hero {
+.our-team-hero {
   background-color: #1a3dde;
   color: white;
-  height: 20vh;
+  text-align: center;
+  padding: 50px 20px 30px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.department-faculty{
   display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-.fee_structure-hero h1{
-  font-size: 3rem;
-  padding-left: 4rem;
-}
-
-.structure_container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+
 }
 
-table {
+figure {
+  background-color: blanchedalmond;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  width: calc(33.333% - 40px);
+  border: 2px solid #1a3dde;
+}
+
+figure img {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
+figure:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
-th {
-  background-color: #f2f2f2;
+
+figcaption {
+  font-size: 1.1rem;
   font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
 }
-td {
-  background-color: #fff;
-} 
-tfoot {
-  background-color: #f9f9f9;
+
+figcaption p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+footer a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* Hero Section for Contact Page */
+.contact-hero {
+  background-image: url("https://images.shiksha.com/mediadata/images/1537269572phpJbvvgh_g.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-overlay);
+}
+.contact-hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 20px;
+}
+.contact-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.contact-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .message-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .message-image {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  figure {
+    width: calc(50% - 40px);
+  }
+}
+
+/* Medium Devices (Tablets) - Portrait mode */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content h1,
+  .about-hero-content h1,
+  .contact-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p,
+  .about-hero-content p,
+  .contact-hero-content p {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .message-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .message-image {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .course-info {
+    flex-direction: column;
+  }
+
+  figure {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Small Devices (Large Phones) */
+@media (max-width: 576px) {
+  header, .fee_structure-hero {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hero, .about-hero, .contact-hero {
+    height: 60vh;
+  }
+
+  .hero-content h1,
+  .about-hero-content h1,
+  .contact-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  figure {
+    width: 100%;
+  }
+
+  .structure_container {
+    padding: 10px;
+  }
+
+  .info-box {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .login {
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+  }
+}
+
+/* Extra Small Devices (Very Small Phones) */
+@media (max-width: 360px) {
+  body {
+    padding: 5px;
+  }
+
+  .hero-content h1,
+  .about-hero-content h1,
+  .contact-hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p,
+  .about-hero-content p,
+  .contact-hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .principal-message {
+    padding: 20px 10px;
+  }
+
+  .contact-col h3 {
+    font-size: 1rem;
+  }
+
+  .contact-col p {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .course-details {
+    padding: 30px 10px;
+  }
+}
+
+
+/* //login section  */
+
+.login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: var(--white-overlay);
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  margin-top: 0;
+}
+
+.login a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   font-weight: bold;
 }
 
-tfoot td {
-  text-align: right;
+/* Form Styles for Register & Login */
+form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px 28px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 1.5px 4px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  border: 1px solid #e6e6e6;
 }
+
+label {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border: 1.5px solid #b3c6e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f4f8fb;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border-color: var(--primary-color);
+  background: #eaf2fb;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, var(--primary-color) 60%, var(--link-color) 100%);
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 8px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #005bb5 60%, #0077ff 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 0.03em;
+}
+
+.form-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.97rem;
+}
+
+.form-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.form-link a:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+  form {
+    padding: 18px 8px;
+    border-radius: 10px;
+  }
+  .form-title {
+    font-size: 1.3rem;
+  }
+}
+
+
