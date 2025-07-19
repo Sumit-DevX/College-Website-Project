@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Admission Form</title>
+</head>
+
+<body>
+  <header>
+    <div class="banner">
+      <img src="images\banner.png" alt="Logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li>
+            <a href="#">Courses</a>
+            <ul class="dropdown">
+              <li><a href="+2.html">+2 Science</a></li>
+              <li><a href="+3.html">+3 Science</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Admission</a>
+            <ul class="dropdown">
+              <li><a href="#">Form</a></li>
+              <li><a href="fee_structure.html">Fee Structure</a></li>
+            </ul>
+          </li>
+          <li><a href="directorMessage.html">Director Message</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="our_team.html">Our Team</a></li>
+        </ul>
+      </nav>
+      <div class="login">
+        <a href="login.html" class="btn red">Login</a>
+        <a href="register.html" class="btn white">Register</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="admission-hero">
+      <h1>Admission Form</h1>
+    </div>
+    <div class="form_container">
+      <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="father_name">Father's Name:</label>
+        <input type="text" id="father_name" name="father_name" required>
+
+        <label for="mother_name">Mother's Name:</label>
+        <input type="text" id="mother_name" name="mother_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="alt_phone">Alternate Phone Number:</label>
+        <input type="tel" id="alt_phone" name="alt_phone">
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          <option value="">Select</option>
+          <option value="General">General</option>
+          <option value="SC">SC</option>
+          <option value="ST">ST</option>
+          <option value="OBC">OBC</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="pin">PIN Code:</label>
+        <input type="text" id="pin" name="pin" required>
+
+        <label for="course">Select Course:</label>
+        <select id="course" name="course" required>
+          <option value="">Select</option>
+          <option value="+2 Science">+2 Science</option>
+          <option value="+3 Science">+3 Science</option>
+        </select>
+
+        <label for="year_passed">Year of Passing:</label>
+        <input type="number" id="year_passed" name="year_passed" min="1900" max="2099" required>
+
+        <label for="marks_obtained">Marks Obtained(%):</label>
+        <input type="number" id="marks_obtained" name="marks_obtained" min="0" max="100" step="0.01" required>
+
+        <label for="photo">Upload Passport Size Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <label for="signature">Upload Signature:</label>
+        <input type="file" id="signature" name="signature" accept="image/*" required>
+
+        <label>
+          <input type="checkbox" name="declaration" required>
+          I hereby declare that the information provided is true to the best of my knowledge.
+        </label>
+
+        <button type="submit" class="btn red">Submit Application</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <section class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-col">
+          <img src="images/logo.png" alt="College Logo" class="logo" />
+          <p>
+            Stewart Science College, Cuttack is a premier co-educational aided Minority Managed Educational Institution
+            in the state of Odisha, established in the year 1944.
+          </p>
+        </div>
+
+        <div class="contact-col">
+          <h3>Courses & Syllabus</h3>
+          <ul>
+            <li><i class="bi bi-box-arrow-up-right"></i> <span class="highlight">+2 Science Stream</span> (384 Seats)
+            </li>
+            <li><i class="bi bi-box-arrow-up-right"></i> <span class="highlight">+3 Science Stream</span></li>
+          </ul>
+        </div>
+
+        <div class="contact-col">
+          <h3>Govt. Links</h3>
+          <ul>
+            <li><i class="bi bi-link-45deg"></i> <a href="#">dheodisha.gov.in</a></li>
+            <li><i class="bi bi-link-45deg"></i> <a href="#">chseodisha.nic.in</a></li>
+            <li><i class="bi bi-link-45deg"></i> <a href="#">uuems.in</a></li>
+            <li><i class="bi bi-link-45deg"></i> <a href="#">ugc.ac.in</a></li>
+            <li><i class="bi bi-link-45deg"></i> <a href="#">www.medhabruti.org</a></li>
+          </ul>
+        </div>
+
+        <div class="contact-col">
+          <h3>Contact Us</h3>
+          <p><i class="bi bi-geo-alt-fill"></i> Buxi Bazar, Mission Road, Cuttack-753001, Odisha, India</p>
+          <p><i class="bi bi-telephone-fill"></i> <a href="tel:+916712416007">+91-671-2416007</a></p>
+          <p><i class="bi bi-envelope-fill"></i> <a
+              href="mailto:principal@stewartsciencecollege.org">principal@stewartsciencecollege.org</a></p>
+        </div>
+      </div>
+    </section>
+    <a id="whatsappBtn" href="#" title="Chat on WhatsApp">
+      <i class="bi bi-whatsapp" style="font-size: 2rem; color: #25D366;"></i>
+    </a>
+    <a id="callBtn" href="#" title="Call Us">
+      <i class="bi bi-telephone-fill" style="font-size: 2rem; color: #0a66c2;"></i>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
